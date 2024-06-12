@@ -1,0 +1,80 @@
+#Escreva uma função main que calcule o aumento de um salário. Ele deve solicitar o valor do salário (salario)
+#e o nível do cargo (cargo). Cargo junior terá um aumento de 15%, pleno de 26% e senior 34%. A função deve retornar
+#o novo salário. Caso o cargo não corresponda a nenhum dos 3, deverá ser retornado o valor -1.
+
+def main(cargo, salario):
+  if cargo == "Junior":
+    aumento = salario * 1.15
+    print("Seu cargo é de 'Junior', e o seu novo salário é", aumento)
+    return aumento
+  elif cargo == "Pleno":
+    aumento = salario * 1.26
+    print("Seu cargo é de 'Pleno', e o seu novo salário é", aumento)
+    return aumento
+  elif cargo == "Senior":
+    aumento = salario * 1.34
+    print("Seu cargo é de 'Senior', e o seu novo salário é", aumento)
+    return aumento
+  else:
+    return -1
+
+-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-
+
+#Escreva uma função main que crie uma sequencia de números e receba um argumento como ultimo número. O retorno da função
+#deve ser a soma de todos estes números gerados.
+
+def main (ultimo):
+  soma = 0
+  for e in range(ultimo + 1):
+    soma = soma + e
+  return soma
+
+-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-
+
+#Escreva um programa que solicite repetidamente que digite um número, os números serão somados e o programa será finalizado
+#quando digitar o número 0. Ao final o programa retorna a soma dos números inseridos.
+
+lista = []
+while True:
+  num = int(input("Digite um número (Para sair digite 0): "))
+  lista.append(num)
+  soma = 0
+  if num == 0:
+    for e in lista:
+      soma = soma + e
+    print(soma)
+    break
+
+-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-
+
+#Escreva um programa para aprovar o empréstimo bancário para compra de uma casa. O programa deve perguntar o valor da casa
+#a comprar, o salário e a quantidade de anos a pagar. O valor da prestação mensal não pode ser superior a 30% do salário.
+#Calcule o valor da prestação como sendo o valor da casa a comprar divido pelo número de meses a pagar.
+
+valor_casa = float(input("Qual o valor da casa? "))  # Não alterar
+salario = float(input("Qual é o salário? "))  # Não alterar
+anos_pagar = int(input("Pagar em quantos anos? "))  # Não alterar
+
+prestacao = valor_casa / anos_pagar
+
+if prestacao > salario * 0.30:
+  print("Aprovado")
+else:
+ print("Negado")
+
+-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-
+
+#Escreva uma função main que pergunte a distância que um passageiro deseja percorrer em km. Calcule o preço da passagem,
+#cobrando R$ 0.50 por km para viagens de até 200 km, R$ 0.45 para viagens entre 200 e 400 km e para viagens mais longas
+#será cobrado R$ 0.35 por km.
+
+def main (dist):
+  if dist <= 200:
+    print(f"Você andou {dist}km, o valor total da sua passagem será R${(dist * 0.50):.2f}")
+    return dist * 0.50
+  elif dist > 200 and dist <= 400:
+    print(f"Você andou {dist}km, o valor total da sua passagem será R${(dist * 0.45):.2f}")
+    return dist * 0.45
+  elif dist > 400:
+    print(f"Você andou {dist}km, o valor total da sua passagem será R${(dist * 0.35):.2f}")
+    return dist * 0.35
